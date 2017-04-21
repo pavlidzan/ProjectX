@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_centerInParent="true"
+        android:gravity="center_horizontal|top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose"
@@ -21,16 +21,23 @@
         android:textSize="20sp"/>
     <Button
         android:id="@+id/sorting"
-        android:padding="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_sorting"
         android:layout_below="@id/title"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        android:onClick="startSorting" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/betting"/>
+        android:id="@+id/betting"
+        android:text="@string/select_betting"
+        android:layout_below="@id/sorting"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="12sp"
+        android:onClick="startBetting" />
 
 </RelativeLayout>

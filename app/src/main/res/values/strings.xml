@@ -2,4 +2,5 @@
     <string name="app_name">Project X</string>
     <string name="choose">Choose what you want?</string>
     <string name="select_sorting">I want to do some sorting...</string>
+    <string name="select_betting">I want to simulate football betting...</string>
 </resources>
