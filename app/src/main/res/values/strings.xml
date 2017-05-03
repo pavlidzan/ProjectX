@@ -3,4 +3,10 @@
     <string name="choose">Choose what you want?</string>
     <string name="select_sorting">I want to do some sorting...</string>
     <string name="select_betting">I want to simulate football betting...</string>
+    <string name="generate_random_numbers_text_view">Generate random numbers</string>
+    <string name="title_sorting_text_view">Let\'s do some sorting</string>
+    <string name="generate_button">Generate</string>
+    <string name="show_numbers_text_view">TextView</string>
+    <string name="chose_sorting_title_text_view">How would you like to sort generated numbers?</string>
+    <string name="sort_numbers">Sort numbers</string>
 </resources>
