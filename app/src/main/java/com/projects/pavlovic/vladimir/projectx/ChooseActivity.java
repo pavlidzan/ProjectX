@@ -26,5 +26,7 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
     public void startBetting(View view) {
+        Intent intent = new Intent(this, BettingActivity.class);
+        startActivity(intent);
     }
 }

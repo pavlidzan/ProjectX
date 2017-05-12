@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="games_to_play">
+        <item>1 KI</item>
+        <item>2 KI</item>
+        <item>x KI</item>
+        <item>1 PP</item>
+        <item>2 PP</item>
+        <item>x pp</item>
+    </string-array>
+</resources>

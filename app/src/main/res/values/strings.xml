@@ -9,4 +9,11 @@
     <string name="show_numbers_text_view">TextView</string>
     <string name="chose_sorting_title_text_view">How would you like to sort generated numbers?</string>
     <string name="sort_numbers">Sort numbers</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="system_ticket">System ticket?</string>
+    <string name="how_many_games">How many games?</string>
+    <string name="create_games">Create games</string>
+    <string name="what_kind_of_system_this_is">What kind of system this is?</string>
+    <string name="play_games">Play games</string>
+    <string name="edit_text_hint">Max matches is </string>
 </resources>

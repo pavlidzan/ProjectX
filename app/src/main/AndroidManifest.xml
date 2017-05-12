@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SortingActivity"></activity>
+        <activity android:name=".SortingActivity" />
+        <activity android:name=".BettingActivity" />
+        <activity android:name=".BettingActivity2"></activity>
     </application>
 
 </manifest>
