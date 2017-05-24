@@ -1,15 +1,18 @@
 package com.projects.pavlovic.vladimir.projectx;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,13 +22,21 @@ import org.w3c.dom.Text;
  * A simple {@link Fragment} subclass.
  */
 public class BettingFragment2 extends Fragment {
+    public static final String MATCHES = "Matches for ticket.";
+    public static final String LEAST_WON_MATCHES = "Least won matches.";
     EditText mSystemNumber;
     Button mPlayButton;
     ListView mListView;
     int mNumberOfGames;
     boolean mIsItSystem;
     TextView mTitleForEditText;
+    Ticket mTicket;
+    int mLeastWanMatches;
 
+    static class ViewHolder{
+        RadioGroup radioGroup;
+        TextView matchName;
+    }
     public static BettingFragment2 newInstance(int numberOfGames, boolean isItSystem){
         BettingFragment2 bf2 = new BettingFragment2();
         Bundle args = new Bundle();
@@ -53,6 +64,9 @@ public class BettingFragment2 extends Fragment {
         mNumberOfGames = getActivity().getIntent().getIntExtra(BettingFragment.NUMBER_OF_GAMES,1);
         mIsItSystem = getActivity().getIntent().getBooleanExtra(BettingFragment.IS_IT_SYSTEM_TICKET, false);
         mTitleForEditText = (TextView) view.findViewById(R.id.picking_system_tv);
+        mTicket = new Ticket(mNumberOfGames, mIsItSystem);
+        CustomAdapter adapter = new CustomAdapter(getActivity(), mTicket.getMatches());
+        mListView.setAdapter(adapter);
         return view;
     }
 
@@ -61,8 +75,27 @@ public class BettingFragment2 extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (mIsItSystem){
             mTitleForEditText.setVisibility(View.VISIBLE);
-            mSystemNumber.setHint(R.string.edit_text_hint + mNumberOfGames);
+//            mSystemNumber.setHint(R.string.edit_text_hint + mNumberOfGames);
+            mSystemNumber.setHint(R.string.edit_text_hint);
             mSystemNumber.setVisibility(View.VISIBLE);
         }
+
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String leastWonMatches = mSystemNumber.getText().toString();
+                if (leastWonMatches.equals("")) {
+                    mLeastWanMatches = 0;
+                } else {
+                    mLeastWanMatches = Integer.parseInt(leastWonMatches);
+                }
+                mTicket.playMatches();
+                Intent intent = new Intent(getActivity(), BettingActivityResults.class);
+                intent.putExtra(MATCHES, mTicket);
+                intent.putExtra(LEAST_WON_MATCHES, mLeastWanMatches);
+                startActivity(intent);
+            }
+        });
+
     }
 }

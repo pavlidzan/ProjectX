@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".SortingActivity" />
         <activity android:name=".BettingActivity" />
-        <activity android:name=".BettingActivity2"></activity>
+        <activity android:name=".BettingActivity2" />
+        <activity android:name=".BettingActivityResults"></activity>
     </application>
 
 </manifest>

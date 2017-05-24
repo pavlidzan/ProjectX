@@ -43,8 +43,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/picking_system_tv"
         app:layout_constraintRight_toRightOf="@+id/picking_system_tv"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:onClick="startSimulation" />
+        android:layout_marginBottom="8dp" />
 
     <ListView
         android:layout_width="352dp"
